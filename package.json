@@ -1,0 +1,45 @@
+{
+    "name": "@asimojs/asidemo",
+    "version": "0.0.1",
+    "description": "Sample Application architecture with Asimo",
+    "author": "Bertrand Laporte",
+    "license": "MIT",
+    "keywords": [
+        "asimo",
+        "tests",
+        "dependency injection",
+        "mocking"
+    ],
+    "scripts": {
+        "clean": "rimraf dist lib",
+        "build": "yarn clean && tsc && vite build",
+        "build-all": "yarn build && vitest run && bash ghpages.bash",
+        "test": "vitest",
+        "coverage": "vitest run --coverage",
+        "dev": "vite",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "@traxjs/trax": "^0.0.3",
+        "@traxjs/trax-preact": "0.0.5",
+        "preact": "^10.11.3",
+        "preact-dom": "^1.0.1",
+        "preact-jsx-runtime": "^1.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@preact/preset-vite": "^2.5.0",
+        "@testing-library/dom": "9.2.0",
+        "@testing-library/preact": "^3.2.3",
+        "@testing-library/user-event": "^14.4.3",
+        "@types/react": "^18.2.0",
+        "@vitest/coverage-v8": "^0.32.0",
+        "jsdom": "^21.1.0",
+        "rimraf": "^5.0.1",
+        "typescript": "^4.9.4",
+        "vite": "^4.3.9",
+        "vitest": "^0.32.0",
+        "tailwindcss": "^3.3.2",
+        "postcss": "^8.4.23"
+    }
+}

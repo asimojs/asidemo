@@ -1,2 +1,2 @@
 # asidemo
-Asimo demo
+Asimo demo [under construction]
