@@ -13,7 +13,7 @@
     "scripts": {
         "clean": "rimraf dist lib",
         "build": "yarn clean && tsc && vite build",
-        "build-all": "yarn build && vitest run && bash ghpages.bash",
+        "build-all": "yarn build && bash ghpages.bash",
         "test": "vitest",
         "coverage": "vitest run --coverage",
         "dev": "vite",
@@ -22,6 +22,7 @@
     "dependencies": {
         "@traxjs/trax": "^0.0.3",
         "@traxjs/trax-preact": "0.0.5",
+        "@asimojs/asimo": "^0.0.1",
         "preact": "^10.11.3",
         "preact-dom": "^1.0.1",
         "preact-jsx-runtime": "^1.2.0"

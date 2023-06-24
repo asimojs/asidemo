@@ -15,6 +15,11 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@asimojs/asimo@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@asimojs/asimo/-/asimo-0.0.1.tgz#4b420f6ed607edabbb771f7d3ca3c6f2f27fd28d"
+  integrity sha512-J57h6RvQ2S7dbMn/X4SJS/nyVOTMIyw2vWl6EEr9QV0odCPIxwMr0I1BVFsPa5u3rq0i/FaWzkAxJ0K5uafrrg==
+
 "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.22.5":
   version "7.22.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.22.5.tgz#234d98e1551960604f1246e6475891a570ad5658"
