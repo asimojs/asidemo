@@ -28,7 +28,7 @@ const routes: ViewId[] = [
  * NavService maintains the navigation data
  * @returns the NavService instance
  */
-export function createNavService(): NavService {
+export function _createNavService(): NavService {
     return trax.createStore("NavService", (store: Store<NavService["data"]>) => {
         const data = store.init({
             view: "loading",
@@ -90,4 +90,4 @@ function getViewId(): { id: ViewId, invalidPath404?: string } {
     return { id: "404", invalidPath404: viewPath };
 }
 
-asm.registerService(NavServiceIID, createNavService);
+asm.registerService(NavServiceIID, _createNavService);

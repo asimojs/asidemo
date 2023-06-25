@@ -13,7 +13,7 @@
     "scripts": {
         "clean": "rimraf dist lib",
         "build": "yarn clean && tsc && vite build",
-        "build-all": "yarn build && bash ghpages.bash",
+        "build-all": "yarn build && vitest run && bash ghpages.bash",
         "test": "vitest",
         "coverage": "vitest run --coverage",
         "dev": "vite",

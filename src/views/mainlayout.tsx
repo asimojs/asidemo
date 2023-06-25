@@ -1,9 +1,17 @@
 import { component } from "@traxjs/trax-preact";
 import { NavService, ViewId } from "../services/types";
+import { useAsyncData } from "../utils/async";
+import { asm } from "@asimojs/asimo";
+import { TeamViewIID } from "./types";
+import { h } from "preact";
 
 
 export const MainLayout = component("MainLayout", ({ ns }: { ns: NavService }) => {
     const nd = ns.data;
+
+    const res = useAsyncData({
+        teamView: () => asm.get(TeamViewIID)
+    });
 
     return <div className="main-layout flex h-screen">
         <div className="w-1/5 h-full max-w-xs min-w-fit">
@@ -15,7 +23,8 @@ export const MainLayout = component("MainLayout", ({ ns }: { ns: NavService }) =
             ) : (nd.view === "tasks") ? (
                 <div> Task list </div>
             ) : (nd.view === "team") ? (
-                <div> Team list </div>
+                // create TeamView component when ready
+                res.teamView().ready ? h(res.teamView().value!, { ns }) : ""
             ) : (nd.view === "loading") ? (
                 <div> Loading... </div>
             ) : (
@@ -43,5 +52,4 @@ const NavBar = component("NavBar", ({ ns }: { ns: NavService }) => {
                 onClick={e => ns.navigate(link.view, e)}> {link.text} </a>
         ))}
     </div>
-
 });
