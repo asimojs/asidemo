@@ -6,6 +6,8 @@ import { asm } from "@asimojs/asimo";
 
 const TEAM_ID = "teamA"; // TODO: retrieve from config service
 
+export const EVT_INIT_COMPLETE = "asimo.services.teamstore.events.initComplete";
+
 export function _createTeamStore() {
     return trax.createStore("TeamStore", (store: Store<TeamStore["data"]>) => {
         let getTeam: GetTeamAPI;
@@ -24,7 +26,9 @@ export function _createTeamStore() {
                     d.id = r.team.id;
                     d.name = r.team.name;
                     trax.updateArray(d.members, r.team.members);
+
                 }
+                trax.log.event(EVT_INIT_COMPLETE);
             }
         });
 

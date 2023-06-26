@@ -50,7 +50,11 @@ export function _createNavService(): NavService {
             }
             data.view = id;
             data.invalidPath404 = (id === "404") ? invalidPath404 : "";
-            pushHistory && window.history.pushState({}, "", rootPath + id);
+
+            let args = "";
+            const queryArgsMatch = window.location.href.match(/(\#|\?).*$/);
+            args = queryArgsMatch && queryArgsMatch[0] || args;
+            pushHistory && window.history.pushState({}, "", rootPath + id + args);
         }
 
         window.onpopstate = () => {
@@ -73,7 +77,7 @@ export function _createNavService(): NavService {
 
 /**
  * Determine the current view from the application url
- * TODO: use a beter router
+ * TODO: use a better router
  */
 function getViewId(): { id: ViewId, invalidPath404?: string } {
     const path = window.location.pathname;

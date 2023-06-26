@@ -15,7 +15,7 @@ export const _TeamView = component("TeamView", ({ ns }: { ns: NavService }) => {
 
     return <div className="team-view">
         <h1 class="text-lg font-semibold mb-1">
-            {data.name}
+            <span class="team-name inline-block max-w-[20rem] max-h-6 truncate text-ellipsis overflow-y-hidden">{data.name}</span>
         </h1>
         <ul>
             {data.members.map((m, idx) => (
