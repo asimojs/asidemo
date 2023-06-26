@@ -6,7 +6,7 @@ import { asm } from "@asimojs/asimo";
 
 const TEAM_ID = "teamA"; // TODO: retrieve from config service
 
-export function createTeamStore() {
+export function _createTeamStore() {
     return trax.createStore("TeamStore", (store: Store<TeamStore["data"]>) => {
         let getTeam: GetTeamAPI;
 
@@ -34,4 +34,4 @@ export function createTeamStore() {
     });
 }
 
-asm.registerService(TeamStoreIID, createTeamStore);
+asm.registerService(TeamStoreIID, _createTeamStore);

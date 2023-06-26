@@ -5,10 +5,13 @@
 
 import { interfaceId } from "@asimojs/asimo";
 
+// ----------------------------------------------------------------------------------
+// GetTeamAPI
 export interface Team {
     id: string;
     name: string;
     members: User[];
+    // real life apps should include pagination cursors on members
 }
 
 export interface User {
@@ -33,4 +36,24 @@ export interface GetTeamResponse {
     team: Team;
 }
 
+// ----------------------------------------------------------------------------------
+// GetTasksAPI
 
+export interface Task {
+    id: string;
+    description: string;
+    completed: boolean;
+    createdBy: User["id"];
+}
+
+export const GetTasksApiIID = interfaceId<GetTasksAPI>("asidemo.api.GetTasksAPI");
+
+export interface GetTasksAPI {
+    (query: { teamId: string }): Promise<GetTasksResponse | ErrorResponse>;
+}
+
+export interface GetTasksResponse {
+    type: "GetTasksResponse";
+    tasks: Task[];
+    // real life apps should include pagination cursors on tasks
+}

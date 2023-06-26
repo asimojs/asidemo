@@ -1,6 +1,6 @@
 import { asm } from "@asimojs/asimo";
 import { FetchIID } from "./types";
-import { GetTeamResponse } from "../api/types";
+import { GetTasksResponse, GetTeamResponse } from "../api/types";
 
 /**
  * This is a custo fetch implementaion to return local demo data instead of calling the actual server
@@ -38,6 +38,36 @@ export async function _fetch(resource: RequestInfo | URL, options?: RequestInit)
             }
         }
         return new Response(JSON.stringify(r));
+    } else if (resource === "/api/tasks/teamA") {
+        const r: GetTasksResponse = {
+            type: "GetTasksResponse",
+            tasks: [
+                {
+                    id: "T1",
+                    description: "Code & Test",
+                    completed: false,
+                    createdBy: "USR1"
+                }, {
+                    id: "T2",
+                    description: "Refactor",
+                    completed: false,
+                    createdBy: "USR1"
+                }, {
+                    id: "T4",
+                    description: "Deploy",
+                    completed: false,
+                    createdBy: "USR1"
+                }, {
+                    id: "T4",
+                    description: "Repeat!",
+                    completed: false,
+                    createdBy: "USR1"
+                }
+            ]
+        }
+        return new Response(JSON.stringify(r));
+    } else {
+        console.log(`Unsupported fetch mock: ${resource}`);
     }
 
     return fetch(resource, options);

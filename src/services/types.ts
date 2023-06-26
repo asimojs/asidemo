@@ -1,5 +1,5 @@
 import { interfaceId } from "@asimojs/asimo";
-import { User } from "../api/types";
+import { Task, User } from "../api/types";
 
 export const NavServiceIID = interfaceId<NavService>("asidemo.services.NavService");
 export interface NavService {
@@ -39,5 +39,12 @@ export interface TeamStore {
         id: string;
         name: string;
         members: User[]
+    }
+}
+
+export const TasksStoreIID = interfaceId<TasksStore>("asidemo.services.TasksStore");
+export interface TasksStore {
+    data: {
+        tasks: Task[]
     }
 }

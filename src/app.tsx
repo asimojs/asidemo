@@ -1,9 +1,7 @@
 import { render } from 'preact';
 import { asm } from '@asimojs/asimo';
-import { NavServiceIID, TeamStoreIID } from './services/types';
+import { NavServiceIID } from './services/types';
 import { MainLayout } from './views/mainlayout';
-import { GetTeamApiIID } from './api/types';
-import { TeamViewIID } from './views/types';
 import './css/app.css';
 
 // main bundle (order doesn't matter)
@@ -13,7 +11,8 @@ import './services/navservice';
 import './utils/demoFetch'; // must be after ./utils/fetch
 
 // Bundles
-asm.registerGroup([TeamStoreIID, GetTeamApiIID, TeamViewIID], () => import("./bundles/teamBundle"));
+import './bundles/teamRegistration';
+import './bundles/tasksRegistration';
 
 async function main() {
     // initialize the navigation service

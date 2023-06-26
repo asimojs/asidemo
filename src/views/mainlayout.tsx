@@ -2,7 +2,7 @@ import { component } from "@traxjs/trax-preact";
 import { NavService, ViewId } from "../services/types";
 import { useAsyncData } from "../utils/async";
 import { asm } from "@asimojs/asimo";
-import { TeamViewIID } from "./types";
+import { TasksViewIID, TeamViewIID } from "./types";
 import { h } from "preact";
 
 
@@ -10,7 +10,8 @@ export const MainLayout = component("MainLayout", ({ ns }: { ns: NavService }) =
     const nd = ns.data;
 
     const res = useAsyncData({
-        teamView: () => asm.get(TeamViewIID)
+        teamView: () => asm.get(TeamViewIID),
+        tasksView: () => asm.get(TasksViewIID)
     });
 
     return <div className="main-layout flex h-screen">
@@ -21,7 +22,8 @@ export const MainLayout = component("MainLayout", ({ ns }: { ns: NavService }) =
             {nd.view === "404" ? (
                 <div> Invalid page: {nd.invalidPath404} </div>
             ) : (nd.view === "tasks") ? (
-                <div> Task list </div>
+                // create TasksView component when ready
+                res.tasksView().ready ? h(res.tasksView().value!, { ns }) : ""
             ) : (nd.view === "team") ? (
                 // create TeamView component when ready
                 res.teamView().ready ? h(res.teamView().value!, { ns }) : ""

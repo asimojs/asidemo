@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { TeamStore } from '../types';
-import { createTeamStore } from '../teamstore';
+import { _createTeamStore } from '../teamstore';
 
 
 describe('TeamStore', () => {
     let teamStore: TeamStore, data: TeamStore["data"];
 
     beforeEach(() => {
-        teamStore = createTeamStore();
+        teamStore = _createTeamStore();
         data = teamStore.data;
     });
 

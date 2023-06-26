@@ -14,20 +14,18 @@ export const _TeamView = component("TeamView", ({ ns }: { ns: NavService }) => {
     const data = r.value.data;
 
     return <div className="team-view">
-        <div>
-            Team view
-        </div>
-        <div>
-            Team id: {data.id}
-        </div>
-        <div>
+        <h1 class="text-lg font-semibold mb-1">
+            {data.name}
+        </h1>
+        <ul>
             {data.members.map((m, idx) => (
-                <div> Member #{idx + 1}: {m.firstName} {m.lastName} </div>
+                <li class="list-['-'] ms-2 ps-3"> Member #{idx + 1}: {m.firstName} {m.lastName} </li>
             ))}
-        </div>
+        </ul>
     </div>
 });
 
+// Note: only entry-point components need to be retrieved through asimo
 asm.registerService(TeamViewIID, () => _TeamView);
 
 
