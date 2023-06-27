@@ -113,6 +113,10 @@ export const HomeView = component("HomeView", ({ ns }: { ns: NavService }) => {
                     any change in the APIs result in typesript compilation error in the mock environment. Besides
                     mocks can also be easily derived from each other, which also reduces the maintainance complexity
                 </li>
+                <li class={liClass}>
+                    the <em>mocks can be used for automated tests</em> as shown in
+                    this <a class="link em" href="https://github.com/asimojs/asidemo/blob/main/src/services/__tests__/teamstore.spec.ts">service unit test</a>
+                </li>
             </ul>
 
         </p>
