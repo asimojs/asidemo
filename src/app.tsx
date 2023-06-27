@@ -6,9 +6,8 @@ import './css/app.css';
 import './bundles';
 
 async function main() {
-    // check if mockenv must be loaded
-    const RX_TEST_PROFILE_ID = /me=([0-9]+)/;
-    const idMatch = window.location.search.match(RX_TEST_PROFILE_ID);
+    // check if mockenv must be loaded if a me url param is found (e.g. /team?me=2)
+    const idMatch = window.location.search.match(/me=([0-9]+)/);
     if (idMatch) {
         const m = await import('./mockenv');
         m.mockEnv.setProfile(parseInt(idMatch[1], 0));

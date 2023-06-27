@@ -6,3 +6,21 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
     font-weight: 300;
 }
+
+em {
+    font-weight: 500;
+    font-style: normal;
+}
+
+a.link {
+    @apply text-cyan-700;
+}
+
+a.link.em {
+    font-weight: 500;
+    font-style: normal;
+}
+
+a.link:hover {
+    @apply underline
+}

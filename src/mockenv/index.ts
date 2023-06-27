@@ -30,7 +30,7 @@ export class MockService {
         this.data = [profile1, profile2][this._profile - 1];
 
         asm.registerService(FetchIID, () => getFetch(this));
-        consoleInfo && console.log('%c Mock Environment:%c profile #%d', 'color:#2d7bf0;font-weight:bold', 'color:orange', this._profile);
+        consoleInfo && console.log('%cMock Environment:%c profile #%d', 'color:#2d7bf0;font-weight:bold', 'color:orange', this._profile);
     }
 }
 
