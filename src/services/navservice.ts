@@ -44,9 +44,11 @@ export function _createNavService(): NavService {
 
         function loadView(id: ViewId, invalidPath404?: string, pushHistory = false) {
             if (id === "tasks") {
-                document.title = "tasks"
+                document.title = "Asimo demo - tasks";
             } else if (id === "team") {
-                document.title = "team"
+                document.title = "Asimo demo - team";
+            } else {
+                document.title = "Asimo demo";
             }
             data.view = id;
             data.invalidPath404 = (id === "404") ? invalidPath404 : "";
