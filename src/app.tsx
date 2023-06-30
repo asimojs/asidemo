@@ -10,7 +10,7 @@ async function main() {
     const idMatch = window.location.search.match(/me=([0-9]+)/);
     if (idMatch) {
         const m = await import('./mockenv');
-        m.mockEnv.setProfile(parseInt(idMatch[1], 0));
+        m.mockEnv.setProfile(parseInt(idMatch[1], 10));
     }
 
     // initialize the navigation service

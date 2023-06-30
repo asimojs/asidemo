@@ -63,6 +63,13 @@ const NavBar = component("NavBar", ({ ns }: { ns: NavService }) => {
             Asimo Demo
         </h1>
         <div class="pt-12">
+            <a className={normalClass}
+                href="https://docs.google.com/presentation/d/1NfAnUP9j1HitSrCWxmEuJs3ATZnbHdN8N_q1GLW29hU/view"
+                target="_blank">
+                    Presentation slides
+            </a>
+        </div>
+        <div class="pt-5">
             {links.map(link => (
                 <a className={link.view === view ? selClass : normalClass} href={link.view}
                     onClick={e => ns.navigate(link.view, e)}> {link.text} </a>

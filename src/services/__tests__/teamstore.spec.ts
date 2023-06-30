@@ -9,7 +9,7 @@ import '../../bundles';
 describe('TeamStore', () => {
     let teamStore: TeamStore, data: TeamStore["data"];
 
-    describe('Profile 1', () => {
+    describe('Long list / Profile 1', () => {
         beforeEach(() => {
             mockEnv.setProfile(1, false);
             teamStore = _createTeamStore();
@@ -36,7 +36,7 @@ describe('TeamStore', () => {
         });
     });
 
-    describe('Profile 2', () => {
+    describe('Short list / Profile 2', () => {
         beforeEach(() => {
             mockEnv.setProfile(2, false);
             teamStore = _createTeamStore();
