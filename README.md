@@ -7,6 +7,10 @@ with [asimo] in order to **keep the application startup fast**, independently fr
 Live demo and documentation: 🚀 https://asimojs.github.io/asidemo/
 
 
+Presentation [slides]
+
+[slides]: https://docs.google.com/presentation/d/1NfAnUP9j1HitSrCWxmEuJs3ATZnbHdN8N_q1GLW29hU/view
+
 ![mv](doc/asidemo.jpg?raw=true)
 
 
